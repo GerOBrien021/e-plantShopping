@@ -263,7 +263,7 @@ function ProductList({ onHomeClick }) {
 
     const handleAddToCart = (plant) => {
         dispatch(addItem(plant));
-        setAddedToCart(...addedToCart, plant.name: true);
+        setAddedToCart((prevState) => ({...prevState, [plant.name]: true}));
     };
 
     return (

@@ -26,10 +26,10 @@ export const CartSlice = createSlice({
         const { name, quantity } = action.payload;
 
         // Check if the item already exists in the cart by comparing names
-        const existingItem = state.items.find(item => item.name === name);
+        const itemToUpdate = state.items.find(item => item.name === name);
 
-        if (existingItem) {
-          existingItem.quantity++;
+        if (itemToUpdate) {
+          itemToUpdate.quantity = quantity;
         }
     },
   },

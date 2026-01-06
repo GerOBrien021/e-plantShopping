@@ -263,7 +263,6 @@ function ProductList({ onHomeClick }) {
         cart.forEach(item => {
             total = total + item.quantity;
         })
-        console.log('Cart total quantity: ', total);
 
         return total;
     };
@@ -329,7 +328,10 @@ function ProductList({ onHomeClick }) {
                                         <div><img src={plant.image} alt={plant.name} className="product-image"></img></div>
                                         <div className="">{plant.description}</div>
                                         <div className="product-price">{plant.cost}</div>
-                                        <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                                        { cart.find(item => item.name === plant.name) ? 
+                                            (<button className="product-button-added" >Added to Cart</button>) : 
+                                            (<button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>)
+                                        }
                                     </div>
                                 ))}
                             </div>

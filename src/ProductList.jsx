@@ -243,6 +243,19 @@ function ProductList({ onHomeClick }) {
         textDecoration: 'none',
     }
 
+    const styleCartQty = {
+        position: 'absolute',
+        top: '-8px',       // Adjust to position vertically
+        right: '-8px',     // Adjust to position horizontally
+        backgroundColor: 'red',
+        color: 'white',
+        borderRadius: '50%',
+        padding: '2px 6px',
+        fontSize: '12px',
+        fontWeight: 'bold',
+        zIndex: 10,
+    }
+
     // Calculate the total quantity of products in the cart
     const calculateTotalQuantity = () => {
         let total = 0;
